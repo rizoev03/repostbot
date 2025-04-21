@@ -30,8 +30,8 @@ def get_story_details(story_id):
     return response.json() if response.ok else None
 
 async def post_to_telegram(title, url):
-    bot = Bot(token=os.getenv("7876957892:AAFUi1CUjc6ikY6yQal3yfyMDvI-Ql6h0Ys")) 
-    chat_id = os.getenv("-1002595201491")
+    bot = Bot(token=os.getenv("TELEGRAM_BOT_TOKEN")) 
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
     message = f"{title}\n{url}"
     await bot.send_message(chat_id=chat_id, text=message)
     print("Sent to Telegram:", message)
